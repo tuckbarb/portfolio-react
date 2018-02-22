@@ -1,0 +1,91 @@
+/* Color Palette: leatherbound by nancythequilt
+http://www.colourlovers.com/palette/41095/leatherbound
+http://paletton.com/#uid=31N0S0kb3kI4Fut7Yp3dlfXjmde*/
+
+@font-face {
+    font-family: RabbidHighwaySign;
+    src: url(RabbidHighwaySign.otf);
+} 
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.window-slide {
+    width:100%;
+    height:100%;
+}
+
+#landing-page {
+  background-color: #F3F1CF;
+  /*background-color: rgba(245, 244, 215, 0.4); */
+  color: #69672A;
+}
+
+#landing-page .greeting {
+  margin: 15% 80px;
+  font-family: RabbidHighwaySign;
+  font-size:72px;
+  float:left;
+  /*border-bottom: 2px solid;
+  border-color: #A5A36C;*/
+
+}
+
+#mountains {
+  width:80%;
+  height:100%;
+  position:fixed;
+  right:0;
+  bottom:-15%;
+}
+
+#mountains img {
+  position:absolute;
+  width:100%;
+  right:0;
+  bottom:0;
+}
+
+#mountains div {
+  height:100%;
+  width:100%;
+  background-position-x: right;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  bottom:0;
+  position:absolute;
+}
+
+#mountains #dry-mountain {
+  background-image:url("range.svg");
+
+}
+
+#mountains #snow-mountain{
+  background-image:url("range-alt.svg");
+  height:0;
+}
+
+#mountains #snow-mountain #sky {
+  position:absolute;
+  top:-75%;
+  width:100%;
+  right:-5%;
+  z-index:2;
+}
+
+#snow-page {
+  background-color: #8D94A2;
+  color:#202C46;
+}
+
+#snow-page .greeting {
+  margin: 15% 80px;
+  font-family: RabbidHighwaySign;
+  font-size:72px;
+  float:left;
+  position:absolute;
+  z-index:1;
+}
