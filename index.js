@@ -1,11 +1,4 @@
-
-/*
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-*/
-
-
+//Portfolio
 
 class Slide extends React.Component {
 
@@ -35,8 +28,8 @@ class Slide extends React.Component {
     }
 
     return (
-      <div class="window-slide" id={this.props.id} style={style} >
-        <div class="greeting">
+      <div className="window-slide" id={this.props.id} style={style} >
+        <div className="greeting">
           {this.props.greeting}
         </div>
       </div>
@@ -48,31 +41,37 @@ class Mountains extends React.Component {
 
   constructor(props){
     super(props);
-    var sh = window.innerHeight;
-    this.state = { height:sh };
+    this.state = { width:window.innerWidth,
+                   scroll:window.scrollY    };
   }
 
-  resizeHeight(){
-    this.setState( { height:window.innerHeight } );
+  resizeWidth(){
+    this.setState( { width:window.innerWidth } );
+  }
+
+  shift(){
+
   }
 
   componentDidMount() {
-       window.addEventListener("resize", () => this.resizeHeight() );
+       window.addEventListener("resize", () => this.resizeWidth() );
+       window.addEventListener("scrollY", () => this.shift() );
    }
 
    componentWillUnmount() {
-       window.removeEventListener("resize", () => this.resizeHeight() );
+       window.removeEventListener("resize", () => this.resizeWidth() );
+       window.removeEventListener("scrollY", () => this.shift() );
    }
 
   render() {
 
 
     var style = {
-      height : this.state.height+"px"
+      width : this.state.width+"px"
     }
 
     return (
-      <div class="mountains" style={style}>
+      <div id="mountains" style={style}>
         <div id="dry"></div>
         <div id="snowy"></div>
       </div>
@@ -88,6 +87,7 @@ class Portfolio extends React.Component {
       <div>
         <Slide id="landing-page" greeting={'woo\n slide 1'} />
         <Slide id="snow-page" greeting={'woo\n slide 2'} />
+        <Mountains />
       </div>
     );
   }
