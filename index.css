@@ -5,7 +5,7 @@ http://paletton.com/#uid=31N0S0kb3kI4Fut7Yp3dlfXjmde*/
 @font-face {
     font-family: RabbidHighwaySign;
     src: url(RabbidHighwaySign.otf);
-} 
+}
 
 html, body {
     height: 100%;
@@ -58,12 +58,12 @@ html, body {
   position:absolute;
 }
 
-#mountains #dry-mountain {
+#mountains #dry {
   background-image:url("range.svg");
 
 }
 
-#mountains #snow-mountain{
+#mountains #snowy{
   background-image:url("range-alt.svg");
   height:0;
 }
