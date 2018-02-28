@@ -41,39 +41,60 @@ class Mountains extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = { width:window.innerWidth,
-                   scroll:window.scrollY    };
+    this.state = { width:0,
+                   shift:0    };
   }
 
   resizeWidth(){
     this.setState( { width:window.innerWidth } );
   }
 
-  shift(){
+  scrollShift(){
+    var relativeScroll = window.scrollY / window.innerHeight;
 
+    var shf;
+
+    if (relativeScroll < 1){
+      shf = Math.min( (relativeScroll * 20) - 10, 0);
+    }else{
+      shf = -( Math.min( ((relativeScroll - 1) * 110) , 100) );
+    }
+
+    var sld = Math.min( (relativeScroll * 100) - 10, 100);
+
+    this.setState( { shift:shf, slide:sld } );
   }
 
   componentDidMount() {
        window.addEventListener("resize", () => this.resizeWidth() );
-       window.addEventListener("scrollY", () => this.shift() );
+       window.addEventListener("scroll", () => this.scrollShift() );
+
+       this.resizeWidth();
+       this.scrollShift();
    }
 
    componentWillUnmount() {
        window.removeEventListener("resize", () => this.resizeWidth() );
-       window.removeEventListener("scrollY", () => this.shift() );
+       window.removeEventListener("scroll", () => this.shiftPlace() );
    }
 
   render() {
 
 
     var style = {
-      width : this.state.width+"px"
+      width : this.state.width+"px",
+      bottom : this.state.shift+"%"
     }
+
+    var overlayStyle = {
+      height : this.state.slide+"%"
+    }
+
 
     return (
       <div id="mountains" style={style}>
         <div id="dry"></div>
-        <div id="snowy"></div>
+        <div id="snowy" style={overlayStyle}></div>
       </div>
     );
   }
@@ -85,9 +106,18 @@ class Portfolio extends React.Component {
 
     return (
       <div>
-        <Slide id="landing-page" greeting={'woo\n slide 1'} />
-        <Slide id="snow-page" greeting={'woo\n slide 2'} />
+        <Slide id="landing-page" greeting={
+                                            <span>hi,<br/>
+                                            i&#39;m tucker</span>
+                                          } />
+        <Slide id="snow-page" greeting={
+                                        <span>and i<br/>
+                                        like efficient<br/>
+                                        <em>design</em>
+                                        <br/>&amp; effective<br/>
+                                        <em>code</em></span>} />
         <Mountains />
+        <Slide />
       </div>
     );
   }
