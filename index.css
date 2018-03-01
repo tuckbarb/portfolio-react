@@ -93,4 +93,17 @@ html, body {
 #snow-page .greeting em{
   font-style: normal;
   color: #EEE;
+   text-shadow: 4px 4px #4C576E;
+}
+
+#about-page{
+  background-color: #C8C696;
+  color:#612634;
+}
+
+#about-page .title{
+  margin: 5%;
+  font-family: RabbidHighwaySign;
+  font-size:48px;
+  text-align:center;
 }
