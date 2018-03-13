@@ -46,7 +46,8 @@ class Mountains extends React.Component {
   constructor(props){
     super(props);
     this.state = { width:0,
-                   shift:0};
+                   shiftx:0,
+                   shifty:0  };
   }
 
   resizeWidth(){
@@ -56,17 +57,20 @@ class Mountains extends React.Component {
   scrollShift(){
     var relativeScroll = window.scrollY / window.innerHeight;
 
-    var shf;
+    var shfx;
+    var shfy;
 
     if (relativeScroll < 1.1){
-      shf = Math.min( (relativeScroll * 20) - 10, 0);
+      shfx = Math.min( (relativeScroll * 20) - 10, 0);
+      shfy = 0;
     }else{
-      shf = -( Math.min( ((relativeScroll - 1.1) * 100) , 100) );
+      shfx = 0;
+      shfy = -( Math.min( ((relativeScroll - 1.1) * 100) , 100) );
     }
 
-    var sld = Math.min( (relativeScroll * 100) - 10, 100);
+    var osld = Math.min( (relativeScroll * 100) - 10, 100);
 
-    this.setState( { shift:shf, slide:sld } );
+    this.setState( { shiftx:shfx, shifty:shfy, oslide:osld } );
   }
 
   componentDidMount() {
@@ -87,11 +91,12 @@ class Mountains extends React.Component {
 
     var style = {
       width : this.state.width+"px",
-      bottom : this.state.shift+"%"
+      bottom : this.state.shiftx+"%",
+      right : this.state.shifty+"%",
     }
 
     var overlayStyle = {
-      height : this.state.slide+"%"
+      height : this.state.oslide+"%"
     }
 
 
@@ -144,9 +149,16 @@ class Content_About extends React.Component {
 
   render(){
     return(
-      <div className="title">
-        oof <br/>
-        ow ow
+      <div>
+        <div className="title">
+          wow ok
+        </div>
+
+        <ul>
+          <li>wassup</li>
+
+          <li>furreal</li>
+        </ul>
       </div>
     );
   }

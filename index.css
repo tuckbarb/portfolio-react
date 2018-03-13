@@ -23,11 +23,13 @@ html, body {
   color: #69672A;
 }
 
+
 #landing-page .greeting {
   margin: 15% 80px;
   font-family: RabbidHighwaySign;
   font-size:64px;
   float:left;
+  line-height: 1.25;
   /*border-bottom: 2px solid;
   border-color: #A5A36C;*/
 
@@ -59,12 +61,12 @@ html, body {
 }
 
 #mountains #dry {
-  background-image:url("range.svg");
+  background-image:url("range-2.svg");
 
 }
 
 #mountains #snowy{
-  background-image:url("range-alt.svg");
+  background-image:url("range-alt-2.svg");
   height:0;
 }
 
@@ -88,6 +90,7 @@ html, body {
   float:left;
   position:absolute;
   z-index:1;
+  line-height:1.25;
 }
 
 #snow-page .greeting em{
@@ -99,11 +102,11 @@ html, body {
 #about-page{
   background-color: #C8C696;
   color:#612634;
+  text-align: center;
 }
 
 #about-page .title{
-  margin: 5%;
+  padding: 5%;
   font-family: RabbidHighwaySign;
   font-size:48px;
-  text-align:center;
 }
