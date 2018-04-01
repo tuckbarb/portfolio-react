@@ -110,10 +110,6 @@ class Mountains extends React.Component {
 }
 
 class Content_Landing extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
   render(){
     return(
       <div className="greeting">
@@ -125,10 +121,6 @@ class Content_Landing extends React.Component {
 }
 
 class Content_Snow extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
   render(){
     return(
       <div className="greeting">
@@ -138,6 +130,17 @@ class Content_Snow extends React.Component {
         <br/>&amp; effective<br/>
         <em>code</em></span>
       </div>
+    );
+  }
+}
+
+class AboutListItem extends React.Component{
+  render(){
+    return(
+      <li>
+        <img src={this.props.icon} />
+        {this.props.children}
+      </li>
     );
   }
 }
@@ -155,9 +158,26 @@ class Content_About extends React.Component {
         </div>
 
         <ul>
-          <li>wassup</li>
 
-          <li>furreal</li>
+          <AboutListItem icon="test.png">
+            Here we go look at me
+          </AboutListItem>
+          <AboutListItem icon="test.png">
+            Here we go look at me
+          </AboutListItem>
+          <AboutListItem icon="test.png">
+            Here we go look at me
+          </AboutListItem>
+        </ul>
+        <ul>
+
+          <AboutListItem icon="test.png">
+            Here we go look at me
+          </AboutListItem>
+          <AboutListItem icon="test.png">
+            Here we go look at me
+          </AboutListItem>
+
         </ul>
       </div>
     );

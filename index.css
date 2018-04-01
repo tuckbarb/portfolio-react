@@ -10,6 +10,8 @@ http://paletton.com/#uid=31N0S0kb3kI4Fut7Yp3dlfXjmde*/
 html, body {
     height: 100%;
     margin: 0;
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
 }
 
 .window-slide {
@@ -109,4 +111,21 @@ html, body {
   padding: 5%;
   font-family: RabbidHighwaySign;
   font-size:48px;
+}
+
+#about-page ul{
+  list-style-type: none;
+  width:40%;
+  float:left;
+}
+
+#about-page ul li{
+  padding:5%;
+}
+
+#about-page ul li img{
+  height:100px;
+  width:100px;
+  position:relative;
+  vertical-align:middle;
 }
