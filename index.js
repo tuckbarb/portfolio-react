@@ -1,6 +1,7 @@
 //Portfolio
 
 const MIN_WIN_HEIGHT = 500;
+const MIN_WIN_RATIO = 0.6;
 
 
 class Slide extends React.Component {
@@ -11,7 +12,7 @@ class Slide extends React.Component {
   }
 
   resizeHeight(){
-    var sh = Math.max(window.innerHeight, MIN_WIN_HEIGHT);
+    var sh = Math.max(window.innerHeight, MIN_WIN_HEIGHT, window.innerWidth * MIN_WIN_RATIO);
     this.setState( {height:sh} );
   }
 
@@ -42,6 +43,7 @@ class Slide extends React.Component {
 }
 
 class Mountains extends React.Component {
+
 
   constructor(props){
     super(props);
@@ -90,9 +92,9 @@ class Mountains extends React.Component {
 
 
     var style = {
-      width : this.state.width+"px",
-      bottom : this.state.shiftx+"%",
-      right : this.state.shifty+"%",
+      width : this.state.width + "px",
+      bottom : this.state.shiftx + "%",
+      right : this.state.shifty + "%",
     }
 
     var overlayStyle = {
@@ -101,8 +103,8 @@ class Mountains extends React.Component {
 
 
     return (
-      <div id="mountains" style={style}>
-        <div id="dry"></div>
+      <div id = "mountains" style={style}>
+        <div id = "dry" > </div>
         <div id="snowy" style={overlayStyle}></div>
       </div>
     );
@@ -125,9 +127,9 @@ class Content_Snow extends React.Component {
     return(
       <div className="greeting">
         <span>and i<br/>
-        like efficient<br/>
+        like good<br/>
         <em>design</em>
-        <br/>&amp; effective<br/>
+        <br/>&amp; smooth<br/>
         <em>code</em></span>
       </div>
     );
@@ -157,9 +159,14 @@ class Content_About extends React.Component {
           wow ok
         </div>
 
+        <div id = "side-map">
+          <img src = "maine.svg" />
+
+        </div>
+        
         <ul>
 
-          <AboutListItem icon="test.png">
+          <AboutListItem icon="bates-logo.svg">
             Here we go look at me
           </AboutListItem>
           <AboutListItem icon="test.png">
@@ -168,16 +175,6 @@ class Content_About extends React.Component {
           <AboutListItem icon="test.png">
             Here we go look at me
           </AboutListItem>
-        </ul>
-        <ul>
-
-          <AboutListItem icon="test.png">
-            Here we go look at me
-          </AboutListItem>
-          <AboutListItem icon="test.png">
-            Here we go look at me
-          </AboutListItem>
-
         </ul>
       </div>
     );

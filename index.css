@@ -98,25 +98,32 @@ html, body {
 #snow-page .greeting em{
   font-style: normal;
   color: #EEE;
-   text-shadow: 4px 4px #4C576E;
+  text-shadow: 4px 4px #4C576E;
 }
 
 #about-page{
   background-color: #C8C696;
-  color:#612634;
+  color:#75444F;
   text-align: center;
 }
 
 #about-page .title{
-  padding: 5%;
+  padding: 4%;
   font-family: RabbidHighwaySign;
-  font-size:48px;
+  font-size: 48px;
+}
+
+#about-page #side-map{
+  width: 30%;
+  margin: 5% 5% 0 10%;
+  height: auto;
+  float: left;
 }
 
 #about-page ul{
   list-style-type: none;
-  width:40%;
-  float:left;
+  width: 40%;
+  float: left;
 }
 
 #about-page ul li{
@@ -124,8 +131,12 @@ html, body {
 }
 
 #about-page ul li img{
-  height:100px;
-  width:100px;
-  position:relative;
-  vertical-align:middle;
+  height: 100px;
+  width: 100px;
+  padding: 10px;
+  margin: 0 20px;
+  position: relative;
+  vertical-align: middle;
+  background-color: #A5A36C;
+  border-radius: 50%;
 }
