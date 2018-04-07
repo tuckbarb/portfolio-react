@@ -1,7 +1,12 @@
 //Portfolio
 
-const MIN_WIN_HEIGHT = 500;
+const MIN_WIN_HEIGHT = 700;
 const MIN_WIN_RATIO = 0.6;
+
+function getWorkingHeight(){
+  return Math.max(window.innerHeight, MIN_WIN_HEIGHT, window.innerWidth * MIN_WIN_RATIO);
+}
+
 
 
 class Slide extends React.Component {
@@ -12,7 +17,7 @@ class Slide extends React.Component {
   }
 
   resizeHeight(){
-    var sh = Math.max(window.innerHeight, MIN_WIN_HEIGHT, window.innerWidth * MIN_WIN_RATIO);
+    var sh = getWorkingHeight();
     this.setState( {height:sh} );
   }
 
@@ -57,7 +62,7 @@ class Mountains extends React.Component {
   }
 
   scrollShift(){
-    var relativeScroll = window.scrollY / window.innerHeight;
+    var relativeScroll = window.scrollY / getWorkingHeight();
 
     var shfx;
     var shfy;
@@ -129,7 +134,7 @@ class Content_Snow extends React.Component {
         <span>and i<br/>
         like good<br/>
         <em>design</em>
-        <br/>&amp; smooth<br/>
+        <br/>&amp; solid<br/>
         <em>code</em></span>
       </div>
     );
@@ -141,13 +146,13 @@ class AboutListItem extends React.Component{
     return(
       <li>
         <img src={this.props.icon} />
-        {this.props.children}
+        <span>{this.props.children}</span>
       </li>
     );
   }
 }
 
-class Content_About extends React.Component {
+class Content_From extends React.Component {
   constructor(props){
     super(props);
   }
@@ -155,31 +160,56 @@ class Content_About extends React.Component {
   render(){
     return(
       <div>
-        <div className="title">
-          wow ok
+        <div className = "title">
+          where i come from
         </div>
 
         <div id = "side-map">
           <img src = "maine.svg" />
 
         </div>
-        
-        <ul>
 
+        <ul>
+          <AboutListItem icon="cougar.svg">
+            <em>Graduated: Mt Blue High School</em><br/>
+            Farmington, Maine<br/>
+            2017
+          </AboutListItem>
           <AboutListItem icon="bates-logo.svg">
-            Here we go look at me
+            <em>Attending: Bates College</em><br/>
+            Lewiston, Maine<br/>
+             2017-present
           </AboutListItem>
-          <AboutListItem icon="test.png">
-            Here we go look at me
-          </AboutListItem>
-          <AboutListItem icon="test.png">
-            Here we go look at me
+          <AboutListItem icon="atom.svg">
+            <em>Studying Physics and Math</em><br/>I&#39;m curious about what holds up the world around us
           </AboutListItem>
         </ul>
       </div>
     );
   }
 }
+
+
+class Content_Areas extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
+  render(){
+    return(
+      <div>
+        <div className = "title">
+          what i&#39;m about
+        </div>
+        <div id = "graph-block">
+
+        </div>
+      </div>
+    );
+  }
+
+}
+
 
 
 
@@ -213,8 +243,13 @@ class Portfolio extends React.Component {
         <Mountains />
 
         <Slide id="about-page">
-          <Content_About/>
+          <Content_From/>
         </Slide>
+
+        <Slide id="areas-page">
+          <Content_Areas/>
+        </Slide>
+
         <Slide/>
       </div>
     );
