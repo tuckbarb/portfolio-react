@@ -158,6 +158,10 @@ html, body {
   text-align: center;
 }
 
+#areas-page .title{
+  padding-bottom: 6%
+}
+
 #areas-page #graph-block{
   background-color:#EEE;
   background-image:url(grid.svg);
@@ -169,4 +173,42 @@ html, body {
   left: 0;
   right: 0;
   box-shadow: inset 0.25em 0.25em 0.2em 0em #202C4680
+}
+
+#areas-page #graph-block #y-axis{
+  position:absolute;
+  left: -12%;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+
+#areas-page #graph-block #x-axis{
+  position: absolute;
+  bottom: -25%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+#done-page{
+  background-color: #75444F;
+  color: #FFF;
+  text-align: center;
+}
+
+#done-page #project-shelf{
+  width:80%;
+  height:80%;
+  padding: 0 10%;
+}
+
+#done-page .project-item{
+  background-color: #98636F;
+  color: #FFF;
+  float: left;
+  width: 48%;
+  height: 35%;
+  margin: 1%;
 }

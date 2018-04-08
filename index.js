@@ -1,7 +1,10 @@
 //Portfolio
 
+
 const MIN_WIN_HEIGHT = 700;
 const MIN_WIN_RATIO = 0.6;
+
+const Fragment = React.Fragment;
 
 function getWorkingHeight(){
   return Math.max(window.innerHeight, MIN_WIN_HEIGHT, window.innerWidth * MIN_WIN_RATIO);
@@ -159,7 +162,7 @@ class Content_From extends React.Component {
 
   render(){
     return(
-      <div>
+      <Fragment>
         <div className = "title">
           where i come from
         </div>
@@ -184,7 +187,7 @@ class Content_From extends React.Component {
             <em>Studying Physics and Math</em><br/>I&#39;m curious about what holds up the world around us
           </AboutListItem>
         </ul>
-      </div>
+      </Fragment>
     );
   }
 }
@@ -197,20 +200,52 @@ class Content_Areas extends React.Component {
 
   render(){
     return(
-      <div>
+      <Fragment>
         <div className = "title">
           what i&#39;m about
         </div>
         <div id = "graph-block">
-
+          <img src = "graph-y.svg" id = "y-axis"/>
+          <img src = "graph-x.svg" id = "x-axis"/>
         </div>
+      </Fragment>
+    );
+  }
+
+}
+
+class ProjectItem extends React.Component {
+  render(){
+    return(
+      <div className = "project-item">
+
       </div>
     );
   }
 
 }
 
+class Content_Done extends React.Component {
 
+  constructor(props){
+    super(props);
+  }
+
+  render(){
+    return(
+      <Fragment>
+        <div className = "title">what i&#39;ve done</div>
+        <div id = "project-shelf">
+          <ProjectItem/>
+          <ProjectItem/>
+          <ProjectItem/>
+          <ProjectItem/>
+        </div>
+      </Fragment>
+    );
+  }
+
+}
 
 
 class Hello extends React.Component {
@@ -250,7 +285,9 @@ class Portfolio extends React.Component {
           <Content_Areas/>
         </Slide>
 
-        <Slide/>
+        <Slide id="done-page">
+          <Content_Done/>
+        </Slide>
       </div>
     );
   }
