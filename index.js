@@ -210,6 +210,7 @@ class Content_Areas extends React.Component {
         <div id = "graph-block">
           <img src = "graph-y.svg" id = "y-axis"/>
           <img src = "graph-x.svg" id = "x-axis"/>
+          <img src = "graph-tools.svg" id = "plot"/>
         </div>
       </Fragment>
     );

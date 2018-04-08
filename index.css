@@ -195,6 +195,11 @@ html, body {
   margin: auto;
 }
 
+#areas-page #graph-block #plot{
+  width:100%;
+  height:auto;
+}
+
 
 #done-page{
   background-color: #75444F;
