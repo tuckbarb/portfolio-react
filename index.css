@@ -64,21 +64,23 @@ html, body {
 
 #mountains div {
   height:100%;
-  width:100%;
-  background-position-x: right;
-  background-position-y: bottom;
+  width:90%;
+  background-position: center bottom;
   background-repeat: no-repeat;
-  bottom:0;
   position:absolute;
+  bottom:0;
+  right:0;
 }
 
 #mountains #dry {
   background-image:url("range-2.svg");
+  background-size: 100% auto;
 
 }
 
 #mountains #snowy{
   background-image:url("range-alt-2.svg");
+  background-size: 100% auto;
   height:0;
 }
 
@@ -96,9 +98,11 @@ html, body {
 }
 
 #snow-page .greeting {
-  margin: 5% 80px;
-  position:absolute;
-  z-index:1;
+  margin-left: 80px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height:100%;
 }
 
 #snow-page .greeting em{
@@ -114,19 +118,19 @@ html, body {
 }
 
 #about-page .title{
-
 }
 
 #about-page #side-map{
   width: 30%;
-  margin: 5% 5% 0 10%;
-  height: auto;
-  float: left;
+  position: absolute;
+  top: 5%;
+  left: 12%;
 }
 
 #about-page ul{
   list-style-type: none;
   width: 40%;
+  margin-left:50%;
   float: left;
   text-align: left;
 }

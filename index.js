@@ -50,6 +50,7 @@ class Slide extends React.Component {
   }
 }
 
+//class for the animated mountains
 class Mountains extends React.Component {
 
 
@@ -60,22 +61,24 @@ class Mountains extends React.Component {
                    shifty:0  };
   }
 
+  //called on window reasize to adjust accordingly
   resizeWidth(){
-    this.setState( { width:window.innerWidth } );
+    const newWidth = window.innerWidth * 0.75;
+    this.setState( { width:newWidth } );
   }
-
+  //called on scroll to shift mountains based on scrollY
   scrollShift(){
+    //in units of which slide currently viewing, starting at zero
     var relativeScroll = window.scrollY / getWorkingHeight();
-
     var shfx;
     var shfy;
-
+    //shift entire mountain unit vert until second slide, shift horiz during second
     if (relativeScroll < 1.1){
-      shfx = Math.min( (relativeScroll * 20) - 10, 0);
-      shfy = 0;
-    }else{
+      shfy = Math.min( (relativeScroll * 20) - 10, 0);
       shfx = 0;
-      shfy = -( Math.min( ((relativeScroll - 1.1) * 100) , 100) );
+    }else{
+      shfy = 0;
+      shfx = -( Math.min( ((relativeScroll - 1.1) * 100) , 100) );
     }
 
     var osld = Math.min( (relativeScroll * 100) - 10, 100);
@@ -101,8 +104,8 @@ class Mountains extends React.Component {
 
     var style = {
       width : this.state.width + "px",
-      bottom : this.state.shiftx + "%",
-      right : this.state.shifty + "%",
+      bottom : this.state.shifty + "%",
+      right : this.state.shiftx + "%",
     }
 
     var overlayStyle = {
