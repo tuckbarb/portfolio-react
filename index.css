@@ -48,7 +48,8 @@ html, body {
 }
 
 #mountains {
-  width:100%;
+  width:75%;
+  min-width: 675px;
   height:100%;
   position:fixed;
   right:0;
@@ -123,7 +124,7 @@ html, body {
 #about-page #side-map{
   width: 30%;
   position: absolute;
-  top: 5%;
+  top: 10%;
   left: 12%;
 }
 
@@ -217,7 +218,45 @@ html, body {
   background-color: #98636F;
   color: #FFF;
   float: left;
-  width: 48%;
+  position: relative;
+  width: 38%;
   height: 35%;
   margin: 1%;
+  padding: 0 5%;
+  overflow:hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#done-page .project-item img{
+  width:100%;
+  position: absolute;
+  left:0;
+  opacity: 1;
+  z-index: 2;
+  transition: opacity 0.25s ease;
+}
+
+#done-page .project-item:hover img{
+  z-index: 0;
+  opacity:0.2;
+}
+
+#done-page .project-item h3{
+  position: relative;
+  z-index: 1;
+  display: block;
+  border-bottom:1px;
+  border-color:#FFF;
+  margin: 10px 50px;
+  padding:10px;
+  border-bottom: 2px #fff solid;
+}
+
+#done-page .project-item span{
+  position: relative;
+  z-index: 1;
+
 }

@@ -27,15 +27,13 @@ class Slide extends React.Component {
   componentDidMount() {
       this.resizeHeight();
       window.addEventListener("resize", () => this.resizeHeight() );
-   }
+  }
 
-   componentWillUnmount() {
-     window.removeEventListener("resize", () => this.resizeHeight() );
-   }
+  componentWillUnmount() {
+    window.removeEventListener("resize", () => this.resizeHeight() );
+  }
 
   render() {
-
-
     var style = {
       height : this.state.height+"px"
     }
@@ -53,18 +51,10 @@ class Slide extends React.Component {
 //class for the animated mountains
 class Mountains extends React.Component {
 
-
   constructor(props){
     super(props);
-    this.state = { width:0,
-                   shiftx:0,
+    this.state = { shiftx:0,
                    shifty:0  };
-  }
-
-  //called on window reasize to adjust accordingly
-  resizeWidth(){
-    const newWidth = window.innerWidth * 0.75;
-    this.setState( { width:newWidth } );
   }
   //called on scroll to shift mountains based on scrollY
   scrollShift(){
@@ -74,45 +64,36 @@ class Mountains extends React.Component {
     var shfy;
     //shift entire mountain unit vert until second slide, shift horiz during second
     if (relativeScroll < 1.1){
-      shfy = Math.min( (relativeScroll * 20) - 10, 0);
+      shfy = Math.min( (relativeScroll * 20) - 10, 0); //enlarge mtns at first
       shfx = 0;
     }else{
       shfy = 0;
-      shfx = -( Math.min( ((relativeScroll - 1.1) * 100) , 100) );
+      shfx = -( Math.min( ((relativeScroll - 1.1) * 100) , 100) ); //slide offscreen horiz
     }
-
+    //'rolling up' of the overlay mountains
     var osld = Math.min( (relativeScroll * 100) - 10, 100);
 
     this.setState( { shiftx:shfx, shifty:shfy, oslide:osld } );
   }
 
   componentDidMount() {
-       window.addEventListener("resize", () => this.resizeWidth() );
        window.addEventListener("scroll", () => this.scrollShift() );
-
-       this.resizeWidth();
        this.scrollShift();
    }
 
-   componentWillUnmount() {
-       window.removeEventListener("resize", () => this.resizeWidth() );
-       window.removeEventListener("scroll", () => this.shiftPlace() );
-   }
+  componentWillUnmount() {
+      window.removeEventListener("scroll", () => this.shiftPlace() );
+  }
 
   render() {
-
-
     var style = {
-      width : this.state.width + "px",
       bottom : this.state.shifty + "%",
-      right : this.state.shiftx + "%",
+      right : this.state.shiftx + "%"
     }
 
     var overlayStyle = {
       height : this.state.oslide+"%"
     }
-
-
     return (
       <div id = "mountains" style={style}>
         <div id = "dry" > </div>
@@ -210,7 +191,7 @@ class Content_Areas extends React.Component {
         <div id = "graph-block">
           <img src = "graph-y.svg" id = "y-axis"/>
           <img src = "graph-x.svg" id = "x-axis"/>
-          <img src = "graph-tools.svg" id = "plot"/>
+          <img src = "graph-tools.svg" id = "plot" />
         </div>
       </Fragment>
     );
@@ -220,10 +201,15 @@ class Content_Areas extends React.Component {
 
 class ProjectItem extends React.Component {
   render(){
-    return(
-      <div className = "project-item">
 
-      </div>
+    return(
+      <a className = "project-item" href = {this.props.link}>
+        <img src={this.props.background}/>
+        <div>
+          <h3 className = "name"> {this.props.name} </h3>
+          <span> {this.props.children} </span>
+        </div>
+      </a>
     );
   }
 
@@ -234,16 +220,23 @@ class Content_Done extends React.Component {
   constructor(props){
     super(props);
   }
-
   render(){
     return(
       <Fragment>
         <div className = "title">what i&#39;ve done</div>
         <div id = "project-shelf">
-          <ProjectItem/>
-          <ProjectItem/>
-          <ProjectItem/>
-          <ProjectItem/>
+          <ProjectItem background="site-khandex.png" name="Khandex" link="http://khandex.nordituck.com">
+            A project I did many years ago, and revamped a few years after that. It indexes and allows you to search from user-created programs on from the site Khan Academy. Uses PHP/MySQL databases.
+          </ProjectItem>
+          <ProjectItem background="site-nordituck.png" name="nordituck.com" link="http://nordituck.com">
+            A site I made to post things I made. Hasn&#39;t seen much action recently, but I redesigned a few years ago for fun. Displays each page with articles retrieved from a MySQL database.
+          </ProjectItem>
+          <ProjectItem background="site-singlesort.png" name="Single Sort Recycling" link="http://nordituck.com/hosting/single-sort">
+            An infographic-like page I made for a laid-back school project back in High School. Has some SVG animations and some pretty colors.
+          </ProjectItem>
+          <ProjectItem background="site-mbhs.png" name="Mt Blue HS Site" link="http://mbhs.mtbluersd.org">
+            A redesign of the Mt Blue High School webpage. Not the most creatively liberated endeavor, being constrained by administrator request and the extremely limited space of Google Sites. Made some custom widgets and icons.
+          </ProjectItem>
         </div>
       </Fragment>
     );
@@ -252,25 +245,11 @@ class Content_Done extends React.Component {
 }
 
 
-class Hello extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
-  render(){
-    return(
-      <span> hello </span>
-    );
-  }
-}
-
 class Portfolio extends React.Component {
   render() {
 
-
     return (
       <div>
-
         <Slide id="landing-page">
           <Content_Landing/>
         </Slide>
