@@ -177,9 +177,64 @@ class Content_From extends React.Component {
 }
 
 
-class Content_Areas extends React.Component {
+
+
+class AreaPlotItem extends React.Component {
+
   constructor(props){
     super(props);
+
+
+  }
+
+
+  render(){
+    return(
+
+        <div/>
+
+      );
+  }
+
+}
+
+
+class Content_Areas extends React.Component {
+
+
+  constructor(props){
+    super(props);
+    var graph = {
+      viewed:false,
+      plotter:null,
+      data:[
+        [],
+        []
+      ]
+    };
+  }
+
+
+  generatePlot(){
+
+  }
+
+  checkScroll(){
+    graphHeight = getElementById("graph-block").offsetTop;
+    sy = window.scrollY;
+
+    if(sy > graphHeight && graph.viewed == false){
+      graph.viewed = true;
+      graph.plotter = setInterval(generatePlot, 500);
+    }
+  }
+
+  componentDidMount() {
+       window.addEventListener("scroll", () => this.checkScroll() );
+   }
+
+  componentWillUnmount() {
+      window.removeEventListener("scroll", () => this.checkScroll() );
   }
 
   render(){
@@ -200,11 +255,16 @@ class Content_Areas extends React.Component {
 }
 
 class ProjectItem extends React.Component {
+
   render(){
 
+    var divStyle = {
+      backgroundImage: 'url(' + this.props.background + ')'
+    };
+
     return(
-      <a className = "project-item" href = {this.props.link}>
-        <img src={this.props.background}/>
+      <a className = "project-item" href = {this.props.link} target="_blank">
+        <div className="back" style = {divStyle}/>
         <div>
           <h3 className = "name"> {this.props.name} </h3>
           <span> {this.props.children} </span>
@@ -231,7 +291,7 @@ class Content_Done extends React.Component {
           <ProjectItem background="site-nordituck.png" name="nordituck.com" link="http://nordituck.com">
             A site I made to post things I made. Hasn&#39;t seen much action recently, but I redesigned a few years ago for fun. Displays each page with articles retrieved from a MySQL database.
           </ProjectItem>
-          <ProjectItem background="site-singlesort.png" name="Single Sort Recycling" link="http://nordituck.com/hosting/single-sort">
+          <ProjectItem background="site-singlesort.png" name="Single Sort Recycling" link="http://nordituck.com/r/single-sort">
             An infographic-like page I made for a laid-back school project back in High School. Has some SVG animations and some pretty colors.
           </ProjectItem>
           <ProjectItem background="site-mbhs.png" name="Mt Blue HS Site" link="http://mbhs.mtbluersd.org">

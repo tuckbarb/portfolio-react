@@ -230,18 +230,27 @@ html, body {
   text-decoration: none;
 }
 
-#done-page .project-item img{
+#done-page .project-item .back{
   width:100%;
+  height:100%;
   position: absolute;
   left:0;
+  right:0;
+  top:0;
+  bottom:0;
   opacity: 1;
+  background-size:cover;
   z-index: 2;
-  transition: opacity 0.25s ease;
+  transition: 0.5s ease;
 }
 
-#done-page .project-item:hover img{
+#done-page .project-item:hover .back{
   z-index: 0;
   opacity:0.2;
+  width:120%;
+  height:120%;
+  left:-10%;
+  top:-10%;
 }
 
 #done-page .project-item h3{
