@@ -201,6 +201,14 @@ html, body {
   height:auto;
 }
 
+#areas-page #graph-block .point{
+  position:absolute;
+  background-size:cover;
+  transform-origin:50% 50%;
+  height:1px;
+  width:1px;
+  transition: transform 0.4s;
+}
 
 #done-page{
   background-color: #75444F;

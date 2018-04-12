@@ -181,22 +181,53 @@ class Content_From extends React.Component {
 
 class AreaPlotItem extends React.Component {
 
+
   constructor(props){
     super(props);
-
+    
+    this.state = {
+      step:0,
+      size:1,
+      active:null
+    }
 
   }
 
 
+  grow(){
+    
+    if(this.state.step < 3){
+      this.setState({size:90});
+      this.state.step++;
+    }else{
+      this.setState({size:60});
+      clearInterval(this.state.active);
+    }
+
+  }
+
+  componentDidMount(){
+    this.state.active = setInterval(this.grow.bind(this), 80);
+  }
+
   render(){
+
+    var pStyle = {
+      backgroundImage: this.props.pstyle.backgroundImage,
+      bottom: this.props.pstyle.bottom,
+      left: this.props.pstyle.left,
+      transform: 'scale(' + this.state.size + ')'
+
+    }
+
     return(
-
-        <div/>
-
-      );
+      <div className = "point" style={pStyle}/>
+    );
   }
 
 }
+
+
 
 
 class Content_Areas extends React.Component {
@@ -204,29 +235,66 @@ class Content_Areas extends React.Component {
 
   constructor(props){
     super(props);
-    var graph = {
+
+    this.state = {
+      plots:[]
+    };
+
+    this.plots = [];
+
+    this.graph = {
       viewed:false,
       plotter:null,
       data:[
-        [],
-        []
+        ['icons/react.svg', 10, 65],
+        ['icons/cpp.svg', 25, 70],
+        ['icons/php.svg', 30, 20],
+        ['icons/py.svg', 40, 80],
+        ['icons/java.svg', 50, 15],
+        ['icons/ai.svg', 60, 70],
+        ['icons/ps.svg', 70, 65],
+        ['icons/js.svg', 75, 45],
+        ['icons/css.svg', 83, 60],
+        ['icons/html.svg', 90, 60]
       ]
     };
   }
 
+  setPlots(newPlots){
+    this.setState({plots:newPlots});
+  }
 
   generatePlot(){
+
+    var points = [];
+
+    if (this.graph.data.length > 0){
+      var newPlots = this.state.plots.slice();
+      newPlots.push(this.graph.data[0]);
+      this.setState({plots:newPlots});
+    } else {
+      clearInterval(this.graph.plotter);
+    }
+    console.log(this.graph.data.length);
+    this.graph.data.splice(0,1);
+
+
+
+    console.log(this.state.plots);
+
+
 
   }
 
   checkScroll(){
-    graphHeight = getElementById("graph-block").offsetTop;
-    sy = window.scrollY;
+    const graphLoc = document.getElementById("graph-block").getBoundingClientRect();
+    const inView = graphLoc.top < (graphLoc.bottom / 2);
 
-    if(sy > graphHeight && graph.viewed == false){
-      graph.viewed = true;
-      graph.plotter = setInterval(generatePlot, 500);
+    if(inView && this.graph.viewed == false){
+      this.graph.viewed = true;
+      this.graph.plotter = setInterval(this.generatePlot.bind(this), 100);
     }
+    
   }
 
   componentDidMount() {
@@ -238,6 +306,8 @@ class Content_Areas extends React.Component {
   }
 
   render(){
+
+
     return(
       <Fragment>
         <div className = "title">
@@ -246,7 +316,13 @@ class Content_Areas extends React.Component {
         <div id = "graph-block">
           <img src = "graph-y.svg" id = "y-axis"/>
           <img src = "graph-x.svg" id = "x-axis"/>
-          <img src = "graph-tools.svg" id = "plot" />
+          {this.state.plots.map((point, index) =>
+              <AreaPlotItem key={"plot-"+index} 
+                            pstyle={{ backgroundImage: 'url(' + point[0] +")",
+                                      left: point[1]+"%",
+                                      bottom: point[2]+"%"}}
+              />)
+          }
         </div>
       </Fragment>
     );
