@@ -213,7 +213,7 @@ class AreaPlotItem extends React.Component {
   render(){
 
     var pStyle = {
-      backgroundImage: this.props.pstyle.backgroundImage,
+      //backgroundImage: this.props.pstyle.backgroundImage,
       bottom: this.props.pstyle.bottom,
       left: this.props.pstyle.left,
       transform: 'scale(' + this.state.size + ')'
@@ -221,7 +221,7 @@ class AreaPlotItem extends React.Component {
     }
 
     return(
-      <div className = "point" style={pStyle}/>
+      <img src={this.props.src} className = "point" style={pStyle}/>
     );
   }
 
@@ -321,6 +321,7 @@ class Content_Areas extends React.Component {
                             pstyle={{ backgroundImage: 'url(' + point[0] +")",
                                       left: point[1]+"%",
                                       bottom: point[2]+"%"}}
+                            src={point[0]}
               />)
           }
         </div>
