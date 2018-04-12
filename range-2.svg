@@ -186,9 +186,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="761.58226"
-     inkscape:cy="551.56541"
+     inkscape:zoom="3.959798"
+     inkscape:cx="292.91986"
+     inkscape:cy="164.4039"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -230,9 +230,31 @@
        id="path3982-4"
        inkscape:connector-curvature="0" />
     <path
+       style="fill:#000000;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.11824324"
+       d="M 70.534397,248.59748 116.3278,297.17714 95.963273,296.96638 Z"
+       id="path3764"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;fill-opacity:0.11824323;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 70.341698,262.29206 25.621572,34.67432 -8.418309,-0.0996 z"
+       id="path3768"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#000000;fill-opacity:0.11824323;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 41.031117,241.46722 41.034819,55.53316 -22.02212,0.0383 z"
+       id="path3766"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
        inkscape:connector-curvature="0"
        style="fill:#7f7d4a;fill-opacity:1;stroke:none;stroke-width:0.45536208px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 133.7724,226.84358 -66.16906,70.19507 h 66.16906 66.16913 z"
        id="path3982-0-9-8-1" />
+    <path
+       style="fill:#000000;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.11824324"
+       d="M 133.7724,226.84358 168.95536,297 l 30.98617,0.0387 z"
+       id="path3762"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>
