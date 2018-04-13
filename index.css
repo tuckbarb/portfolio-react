@@ -7,10 +7,15 @@ http://paletton.com/#uid=31N0S0kb3kI4Fut7Yp3dlfXjmde*/
     src: url(RabbidHighwaySign.otf);
 }
 
+@font-face {
+    font-family: Spinwerad;
+    src: url(spinwerad.ttf);
+}
+
 html, body{
     height: 100%;
     margin: 0;
-    font-family: Verdana, sans-serif;
+    font-family: Spinwerad, serif;
     font-weight: bold;
     min-width: 900px;
 }
