@@ -7,7 +7,7 @@ http://paletton.com/#uid=31N0S0kb3kI4Fut7Yp3dlfXjmde*/
     src: url(RabbidHighwaySign.otf);
 }
 
-html, body {
+html, body{
     height: 100%;
     margin: 0;
     font-family: Verdana, sans-serif;
@@ -39,12 +39,13 @@ html, body {
 #landing-page {
   background-color: #F3F1CF;
   /*background-color: rgba(245, 244, 215, 0.4); */
-  color: #69672A;
 }
 
 
 #landing-page .greeting {
   margin: 15% 80px;
+  text-shadow:0px 0px 5px #f3f1cf, 0 0 0 #000C;
+  color: #69672ACC;
 }
 
 #mountains {
@@ -83,6 +84,7 @@ html, body {
   background-image:url("range-alt-2.svg");
   background-size: 100% auto;
   height:0;
+  transition: height 0.02s;
 }
 
 #mountains #snow-mountain #sky {
@@ -95,7 +97,6 @@ html, body {
 
 #snow-page {
   background-color: #8D94A2;
-  color:#202C46;
 }
 
 #snow-page .greeting {
@@ -104,6 +105,9 @@ html, body {
   justify-content: center;
   flex-direction: column;
   height:100%;
+  text-shadow:0px 0px 5px #8D94A2, 0 0 0 #000C;
+  color:#202C46CC;
+
 }
 
 #snow-page .greeting em{
@@ -193,7 +197,7 @@ html, body {
   bottom: -25%;
   left: 0;
   right: 0;
-  margin: auto;
+  margin: 0 auto;
 }
 
 #areas-page #graph-block #plot{
