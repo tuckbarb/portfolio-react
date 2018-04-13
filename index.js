@@ -187,7 +187,7 @@ class AreaPlotItem extends React.Component {
     
     this.state = {
       step:0,
-      size:1,
+      size:0,
       active:null
     }
 
@@ -197,10 +197,10 @@ class AreaPlotItem extends React.Component {
   grow(){
     
     if(this.state.step < 3){
-      this.setState({size:90});
+      this.setState({size:1});
       this.state.step++;
     }else{
-      this.setState({size:60});
+      this.setState({size:0.6});
       clearInterval(this.state.active);
     }
 
@@ -249,13 +249,13 @@ class Content_Areas extends React.Component {
         ['icons/react.svg', 10, 65],
         ['icons/cpp.svg', 25, 70],
         ['icons/php.svg', 30, 20],
-        ['icons/py.svg', 40, 80],
+        ['icons/py.svg', 40, 75],
         ['icons/java.svg', 50, 15],
         ['icons/ai.svg', 60, 70],
         ['icons/ps.svg', 70, 65],
         ['icons/js.svg', 75, 45],
-        ['icons/css.svg', 83, 60],
-        ['icons/html.svg', 90, 60]
+        ['icons/css.svg', 80, 60],
+        ['icons/html.svg', 85, 60]
       ]
     };
   }

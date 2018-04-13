@@ -193,7 +193,7 @@ html, body {
   bottom: -25%;
   left: 0;
   right: 0;
-  margin: auto;
+  margin: 0 auto;
 }
 
 #areas-page #graph-block #plot{
@@ -205,8 +205,8 @@ html, body {
   position:absolute;
   background-size:cover;
   transform-origin:50% 50%;
-  height:1px;
-  width:1px;
+  height:120px;
+  width:120px;
   transition: transform 0.4s;
 }
 
