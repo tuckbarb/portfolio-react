@@ -108,7 +108,7 @@ class Content_Landing extends React.Component {
     return(
       <div className="greeting">
         <span>hi,<br/>
-        i&#39;m tucker</span>
+        I&#39;m Tucker</span>
       </div>
     );
   }
@@ -118,7 +118,7 @@ class Content_Snow extends React.Component {
   render(){
     return(
       <div className="greeting">
-        <span>and i<br/>
+        <span>and I<br/>
         like good<br/>
         <em>design</em>
         <br/>&amp; solid<br/>
@@ -147,14 +147,10 @@ class Content_From extends React.Component {
   render(){
     return(
       <Fragment>
-        <div className = "title">
-          where i come from
-        </div>
 
-        <div id = "side-map">
-          <img src = "maine.svg" />
 
-        </div>
+        <img id="from-header" src="from-header.svg" />
+        <img id="maine-map" src="maine.svg" />
 
         <ul>
           <AboutListItem icon="cougar.svg">
@@ -221,7 +217,7 @@ class AreaPlotItem extends React.Component {
     }
 
     return(
-      <img src={this.props.src} className = "point" style={pStyle}/>
+      <img src={this.props.src} className = "point" title={this.props.title} style={pStyle}/>
     );
   }
 
@@ -246,16 +242,16 @@ class Content_Areas extends React.Component {
       viewed:false,
       plotter:null,
       data:[
-        ['icons/react.svg', 10, 65],
-        ['icons/cpp.svg', 25, 70],
-        ['icons/php.svg', 30, 20],
-        ['icons/py.svg', 40, 75],
-        ['icons/java.svg', 50, 15],
-        ['icons/ai.svg', 60, 70],
-        ['icons/ps.svg', 70, 65],
-        ['icons/js.svg', 75, 45],
-        ['icons/css.svg', 80, 60],
-        ['icons/html.svg', 85, 60]
+        ['React', 'icons/react.svg', 5, 55],
+        ['C++', 'icons/cpp.svg', 20, 60],
+        ['PHP', 'icons/php.svg', 25, 10],
+        ['Python', 'icons/py.svg', 35, 65],
+        ['Java', 'icons/java.svg', 45, 10],
+        ['Illustrator', 'icons/ai.svg', 55, 60],
+        ['PhotoShop', 'icons/ps.svg', 65, 55],
+        ['Javascript', 'icons/js.svg', 70, 35],
+        ['CSS', 'icons/css.svg', 75, 50],
+        ['HTML', 'icons/html.svg', 82, 50]
       ]
     };
   }
@@ -311,17 +307,18 @@ class Content_Areas extends React.Component {
     return(
       <Fragment>
         <div className = "title">
-          what i&#39;m about
+          what I&#39;m about
         </div>
         <div id = "graph-block">
           <img src = "graph-y.svg" id = "y-axis"/>
           <img src = "graph-x.svg" id = "x-axis"/>
           {this.state.plots.map((point, index) =>
               <AreaPlotItem key={"plot-"+index} 
-                            pstyle={{ backgroundImage: 'url(' + point[0] +")",
-                                      left: point[1]+"%",
-                                      bottom: point[2]+"%"}}
-                            src={point[0]}
+                            title={point[0]}
+                            pstyle={{ backgroundImage: 'url(' + point[1] +")",
+                                      left: point[2]+"%",
+                                      bottom: point[3]+"%"}}
+                            src={point[1]}
               />)
           }
         </div>
@@ -360,7 +357,7 @@ class Content_Done extends React.Component {
   render(){
     return(
       <Fragment>
-        <div className = "title">what i&#39;ve done</div>
+        <div className = "title">what I&#39;ve done</div>
         <div id = "project-shelf">
           <ProjectItem background="site-khandex.png" name="Khandex" link="http://khandex.nordituck.com">
             A project I did many years ago, and revamped a few years after that. It indexes and allows you to search from user-created programs on from the site Khan Academy. Uses PHP/MySQL databases.
@@ -369,7 +366,7 @@ class Content_Done extends React.Component {
             A site I made to post things I made. Hasn&#39;t seen much action recently, but I redesigned a few years ago for fun. Displays each page with articles retrieved from a MySQL database.
           </ProjectItem>
           <ProjectItem background="site-singlesort.png" name="Single Sort Recycling" link="http://nordituck.com/r/single-sort">
-            An infographic-like page I made for a laid-back school project back in High School. Has some SVG animations and some pretty colors.
+            An infographic-esqe page I made for a laid-back school project back in High School. Has some SVG animations and some pretty colors.
           </ProjectItem>
           <ProjectItem background="site-mbhs.png" name="Mt Blue HS Site" link="http://mbhs.mtbluersd.org">
             A redesign of the Mt Blue High School webpage. Not the most creatively liberated endeavor, being constrained by administrator request and the extremely limited space of Google Sites. Made some custom widgets and icons.

@@ -12,10 +12,15 @@ http://paletton.com/#uid=31N0S0kb3kI4Fut7Yp3dlfXjmde*/
     src: url(spinwerad.ttf);
 }
 
+@font-face {
+    font-family: Charis;
+    src: url(CharisSILB.ttf);
+}
+
 html, body{
     height: 100%;
     margin: 0;
-    font-family: Spinwerad, serif;
+    font-family: Charis, serif;
     font-weight: bold;
     min-width: 900px;
 }
@@ -125,44 +130,53 @@ html, body{
   background-color: #C8C696;
   color:#75444F;
   text-align: center;
+  padding: 5%;
 }
 
-#about-page .title{
+#about-page #from-header{
+  width:30%;
+  position:absolute;
+  left:3%;
 }
 
-#about-page #side-map{
-  width: 30%;
+#about-page #maine-map{
+  width: 35%;
   position: absolute;
   top: 10%;
-  left: 12%;
+  left: 20%;
 }
 
 #about-page ul{
   list-style-type: none;
-  width: 40%;
-  margin-left:50%;
+  width: 35%;
+  margin-left:55%;
   float: left;
   text-align: left;
 }
 
 #about-page ul li{
-  padding:5%;
+  padding:2%;
+  margin:5%;
+  background-color: #A5A36C;
+  border-radius: 10px;
+  box-shadow:#69672A 6px 6px 0px;
 }
 
 #about-page ul li img{
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   padding: 10px;
-  margin: 0 20px;
+  margin: 20px 20px;
   position: relative;
-  background-color: #A5A36C;
+  background-color: #C8C696;
   border-radius: 50%;
+  box-shadow: #69672A 4px 4px 0px;
 
 }
 
 #about-page span{
   position:absolute;
-  width:25%;
+  width:15%;
   padding-top:20px;
 }
 
@@ -180,13 +194,13 @@ html, body{
   background-color:#EEE;
   background-image:url(grid.svg);
   background-repeat: repeat;
-  width: 70%;
-  height: 50%;
+  width: 65%;
+  height: 45%;
   position: absolute;
   margin:auto;
   left: 0;
   right: 0;
-  box-shadow: inset 0.25em 0.25em 0.2em 0em #202C4680
+  box-shadow: inset 0.25em 0.25em 0.2em 0em #202C4680;
 }
 
 #areas-page #graph-block #y-axis{
