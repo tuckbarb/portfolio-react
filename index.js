@@ -149,22 +149,22 @@ class Content_From extends React.Component {
       <Fragment>
 
 
-        <img id="from-header" src="from-header.svg" />
-        <img id="maine-map" src="maine.svg" />
+        <img id="from-header" src="res/from-header.svg" />
+        <img id="maine-map" src="res/maine.svg" />
 
         <ul>
-          <AboutListItem icon="cougar.svg">
-            <em>Graduated: Mt Blue High School</em><br/>
+          <AboutListItem icon="res/cougar.svg">
+            <em>Graduated:<br/> Mt Blue High School</em><br/>
             Farmington, Maine<br/>
             2017
           </AboutListItem>
-          <AboutListItem icon="bates-logo.svg">
-            <em>Attending: Bates College</em><br/>
+          <AboutListItem icon="res/bates-logo.svg">
+            <em>Attending:<br/> Bates College</em><br/>
             Lewiston, Maine<br/>
              2017-present
           </AboutListItem>
-          <AboutListItem icon="atom.svg">
-            <em>Studying Physics and Math</em><br/>I&#39;m curious about what holds up the world around us
+          <AboutListItem icon="res/atom.svg">
+            <em>Studying<br/> Physics and Math</em><br/>I&#39;m curious about what holds up the world around us
           </AboutListItem>
         </ul>
       </Fragment>
@@ -307,11 +307,11 @@ class Content_Areas extends React.Component {
     return(
       <Fragment>
         <div className = "title">
-          what I&#39;m about
+          What I&#39;m about
         </div>
         <div id = "graph-block">
-          <img src = "graph-y.svg" id = "y-axis"/>
-          <img src = "graph-x.svg" id = "x-axis"/>
+          <img id="y-axis" src="res/graph-y.svg"/>
+          <img id="x-axis" src="res/graph-x.svg"/>
           {this.state.plots.map((point, index) =>
               <AreaPlotItem key={"plot-"+index} 
                             title={point[0]}
@@ -357,18 +357,18 @@ class Content_Done extends React.Component {
   render(){
     return(
       <Fragment>
-        <div className = "title">what I&#39;ve done</div>
+        <div className = "title">What I&#39;ve done</div>
         <div id = "project-shelf">
-          <ProjectItem background="site-khandex.png" name="Khandex" link="http://khandex.nordituck.com">
+          <ProjectItem background="res/site-khandex.png" name="Khandex" link="http://khandex.nordituck.com">
             A project I did many years ago, and revamped a few years after that. It indexes and allows you to search from user-created programs on from the site Khan Academy. Uses PHP/MySQL databases.
           </ProjectItem>
-          <ProjectItem background="site-nordituck.png" name="nordituck.com" link="http://nordituck.com">
+          <ProjectItem background="res/site-nordituck.png" name="nordituck.com" link="http://nordituck.com">
             A site I made to post things I made. Hasn&#39;t seen much action recently, but I redesigned a few years ago for fun. Displays each page with articles retrieved from a MySQL database.
           </ProjectItem>
-          <ProjectItem background="site-singlesort.png" name="Single Sort Recycling" link="http://nordituck.com/r/single-sort">
+          <ProjectItem background="res/site-singlesort.png" name="Single Sort Recycling" link="http://nordituck.com/r/single-sort">
             An infographic-esqe page I made for a laid-back school project back in High School. Has some SVG animations and some pretty colors.
           </ProjectItem>
-          <ProjectItem background="site-mbhs.png" name="Mt Blue HS Site" link="http://mbhs.mtbluersd.org">
+          <ProjectItem background="res/site-mbhs.png" name="Mt Blue HS Site" link="http://mbhs.mtbluersd.org">
             A redesign of the Mt Blue High School webpage. Not the most creatively liberated endeavor, being constrained by administrator request and the extremely limited space of Google Sites. Made some custom widgets and icons.
           </ProjectItem>
         </div>
@@ -377,6 +377,7 @@ class Content_Done extends React.Component {
   }
 
 }
+
 
 
 class Portfolio extends React.Component {

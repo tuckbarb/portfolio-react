@@ -4,17 +4,12 @@ http://paletton.com/#uid=31N0S0kb3kI4Fut7Yp3dlfXjmde*/
 
 @font-face {
     font-family: RabbidHighwaySign;
-    src: url(RabbidHighwaySign.otf);
-}
-
-@font-face {
-    font-family: Spinwerad;
-    src: url(spinwerad.ttf);
+    src: url('res/RabbidHighwaySign.otf');
 }
 
 @font-face {
     font-family: Charis;
-    src: url(CharisSILB.ttf);
+    src: url('res/CharisSILB.ttf');
 }
 
 html, body{
@@ -85,13 +80,13 @@ html, body{
 }
 
 #mountains #dry {
-  background-image:url("range-2.svg");
+  background-image:url("res/range.svg");
   background-size: 100% auto;
 
 }
 
 #mountains #snowy{
-  background-image:url("range-alt-2.svg");
+  background-image:url("res/range-alt.svg");
   background-size: 100% auto;
   height:0;
   transition: height 0.02s;
@@ -130,26 +125,26 @@ html, body{
   background-color: #C8C696;
   color:#75444F;
   text-align: center;
-  padding: 5%;
 }
 
 #about-page #from-header{
   width:30%;
   position:absolute;
-  left:3%;
+  left:8%;
+  top: 10%;
 }
 
 #about-page #maine-map{
   width: 35%;
   position: absolute;
-  top: 10%;
-  left: 20%;
+  top: 20%;
+  left: 25%;
 }
 
 #about-page ul{
   list-style-type: none;
   width: 35%;
-  margin-left:55%;
+  margin: 10% 0 0 60%;
   float: left;
   text-align: left;
 }
@@ -160,6 +155,7 @@ html, body{
   background-color: #A5A36C;
   border-radius: 10px;
   box-shadow:#69672A 6px 6px 0px;
+  line-height: 1.2em;
 }
 
 #about-page ul li img{
@@ -172,6 +168,10 @@ html, body{
   border-radius: 50%;
   box-shadow: #69672A 4px 4px 0px;
 
+}
+
+#about-page ul li em{
+  font-family:RabbidHighwaySign;
 }
 
 #about-page span{
@@ -192,7 +192,7 @@ html, body{
 
 #areas-page #graph-block{
   background-color:#EEE;
-  background-image:url(grid.svg);
+  background-image:url('res/grid.svg');
   background-repeat: repeat;
   width: 65%;
   height: 45%;
@@ -259,6 +259,7 @@ html, body{
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  line-height: 1.2em;
 }
 
 #done-page .project-item .back{
@@ -293,6 +294,7 @@ html, body{
   margin: 10px 50px;
   padding:10px;
   border-bottom: 2px #fff solid;
+  font-family:RabbidHighwaySign;
 }
 
 #done-page .project-item span{
