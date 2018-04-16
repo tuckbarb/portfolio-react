@@ -107,7 +107,7 @@ class Content_Landing extends React.Component {
   render(){
     return(
       <div className="greeting">
-        <span>hi,<br/>
+        <span>Hi,<br/>
         I&#39;m Tucker</span>
       </div>
     );
@@ -122,7 +122,7 @@ class Content_Snow extends React.Component {
         like good<br/>
         <em>design</em>
         <br/>&amp; solid<br/>
-        <em>code</em></span>
+        <em>code.</em></span>
       </div>
     );
   }
@@ -164,7 +164,7 @@ class Content_From extends React.Component {
              2017-present
           </AboutListItem>
           <AboutListItem icon="res/atom.svg">
-            <em>Studying<br/> Physics and Math</em><br/>I&#39;m curious about what holds up the world around us
+            <em>Studying:<br/> Physics and Math</em><br/>I&#39;m curious about what holds up the world around us
           </AboutListItem>
         </ul>
       </Fragment>
@@ -255,11 +255,6 @@ class Content_Areas extends React.Component {
       ]
     };
   }
-
-  setPlots(newPlots){
-    this.setState({plots:newPlots});
-  }
-
   generatePlot(){
 
     var points = [];
@@ -307,7 +302,7 @@ class Content_Areas extends React.Component {
     return(
       <Fragment>
         <div className = "title">
-          What I&#39;m about
+          What I&#39;m About
         </div>
         <div id = "graph-block">
           <img id="y-axis" src="res/graph-y.svg"/>
@@ -357,7 +352,7 @@ class Content_Done extends React.Component {
   render(){
     return(
       <Fragment>
-        <div className = "title">What I&#39;ve done</div>
+        <div className = "title">What I&#39;ve Done</div>
         <div id = "project-shelf">
           <ProjectItem background="res/site-khandex.png" name="Khandex" link="http://khandex.nordituck.com">
             A project I did many years ago, and revamped a few years after that. It indexes and allows you to search from user-created programs on from the site Khan Academy. Uses PHP/MySQL databases.
