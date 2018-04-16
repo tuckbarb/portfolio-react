@@ -50,7 +50,7 @@ html, body{
 #landing-page .greeting {
   margin: 15% 80px;
   text-shadow:0px 0px 5px #f3f1cf, 0 0 0 #000C;
-  color: #69672ACC;
+  color: rgba(105, 103, 42, 0.8);
 }
 
 #mountains {
@@ -111,7 +111,7 @@ html, body{
   flex-direction: column;
   height:100%;
   text-shadow:0px 0px 5px #8D94A2, 0 0 0 #000C;
-  color:#202C46CC;
+  color: rgba(32, 44, 70, 0.8);
 
 }
 
