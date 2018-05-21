@@ -34,8 +34,12 @@ class Slide extends React.Component {
   }
 
   render() {
-    var style = {
-      height : this.state.height+"px"
+
+
+    var style = {};
+
+    if(this.props.type == "screen"){
+      style.height = this.state.height + "px";
     }
 
     return (
@@ -242,8 +246,8 @@ class Content_Areas extends React.Component {
       viewed:false,
       plotter:null,
       data:[
-        ['React', 'icons/react.svg', 5, 55],
-        ['C++', 'icons/cpp.svg', 20, 60],
+        ['React', 'icons/react.svg', 20, 50],
+        ['C++', 'icons/cpp.svg', 15, 60],
         ['PHP', 'icons/php.svg', 25, 10],
         ['Python', 'icons/py.svg', 35, 65],
         ['Java', 'icons/java.svg', 45, 10],
@@ -357,14 +361,11 @@ class Content_Done extends React.Component {
           <ProjectItem background="res/site-khandex.png" name="Khandex" link="http://khandex.nordituck.com">
             A project I did many years ago, and revamped a few years after that. It indexes and allows you to search from user-created programs on from the site Khan Academy. Uses PHP/MySQL databases.
           </ProjectItem>
-          <ProjectItem background="res/site-nordituck.png" name="nordituck.com" link="http://nordituck.com">
-            A site I made to post things I made. Hasn&#39;t seen much action recently, but I redesigned a few years ago for fun. Displays each page with articles retrieved from a MySQL database.
-          </ProjectItem>
-          <ProjectItem background="res/site-singlesort.png" name="Single Sort Recycling" link="http://nordituck.com/r/single-sort">
-            An infographic-esqe page I made for a laid-back school project back in High School. Has some SVG animations and some pretty colors.
-          </ProjectItem>
           <ProjectItem background="res/site-mbhs.png" name="Mt Blue HS Site" link="http://mbhs.mtbluersd.org">
-            A redesign of the Mt Blue High School webpage. Not the most creatively liberated endeavor, being constrained by administrator request and the extremely limited space of Google Sites. Made some custom widgets and icons.
+            A complete redesign of the Mt Blue High School webpage. Not the most creatively liberated endeavor, being constrained by administrator request and the extremely limited space of Google Sites. Had a swell old time making some custom Google widgets and icons (site has seen some changes since my work on it).
+          </ProjectItem>
+          <ProjectItem background="res/site-cbb.png" name="'Professor Know-It-All'" link="https://github.com/irajwani/cbbhackathon">
+            An app and webservice concept developed over 36 hours at the CBB Hackathon. The app is written in React Native, with the server-side processing done with Google Cloud API, and the web dashboard in ReactJS. I worked in a team and managed the GCPAPI and web dash.
           </ProjectItem>
         </div>
       </Fragment>
@@ -380,21 +381,21 @@ class Portfolio extends React.Component {
 
     return (
       <div>
-        <Slide id="landing-page">
+        <Slide type="screen" id="landing-page">
           <Content_Landing/>
         </Slide>
 
-        <Slide id="snow-page">
+        <Slide type="screen" id="snow-page">
           <Content_Snow/>
         </Slide>
 
         <Mountains />
 
-        <Slide id="about-page">
+        <Slide type="screen" id="about-page">
           <Content_From/>
         </Slide>
 
-        <Slide id="areas-page">
+        <Slide type="screen" id="areas-page">
           <Content_Areas/>
         </Slide>
 

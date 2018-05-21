@@ -166,7 +166,7 @@ html, body{
   position: relative;
   background-color: #C8C696;
   border-radius: 50%;
-  box-shadow: #69672A 4px 4px 0px;
+  box-shadow: #69672A -4px -4px 0px;
 
 }
 
@@ -241,18 +241,17 @@ html, body{
 
 #done-page #project-shelf{
   width:80%;
-  height:80%;
-  padding: 0 10%;
+  min-height:80%;
+  padding: 0 10% 10% 10%;
 }
 
 #done-page .project-item{
   background-color: #98636F;
   color: #FFF;
-  float: left;
   position: relative;
-  width: 38%;
-  height: 35%;
-  margin: 1%;
+  width: 60%;
+  height: 400px;
+  margin: 3% auto;
   padding: 0 5%;
   overflow:hidden;
   display: flex;
